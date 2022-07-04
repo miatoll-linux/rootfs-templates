@@ -32,12 +32,10 @@ actions:
     chroot: true
     script: ../scripts/clean-bootstrap-repositories.sh
 
-{{ if eq $use_internal_repository "yes" }}
   - action: overlay
-    source: ../../apt
-    description: Add internal repository
-    destination: /var/lib/droidian-internal-repository
-{{end}}
+    source: ../../overlay
+    description: Hack to suport remote repositories
+    destination: /
 
   - action: run
     description: Build configuration
