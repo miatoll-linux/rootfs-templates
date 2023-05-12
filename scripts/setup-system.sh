@@ -11,7 +11,7 @@ locale-gen
 plymouth-set-default-theme mobian
 
 # Load phosh on startup if package is installed
-if [ -f /usr/bin/phosh ]; then
+if [ -f /usr/bin/phosh-session ]; then
     systemctl enable phosh.service
 fi
 
@@ -22,5 +22,3 @@ fi
 if [ -f /usr/bin/cutie-settings-daemon ]; then
     systemctl enable cutie-settings-daemon.service
 fi
-
-rm -f /etc/systemd/system/android-service@hwcomposer.service.d/20-phosh.conf
